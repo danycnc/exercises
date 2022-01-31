@@ -8,8 +8,109 @@
     <title>Lezione CSS</title>
 </head>
 
-<body>
+<style>
+
+    body {
+        height: 100vh;
+        font-family: sans-serif;
+    }
+
+    aside {
+        box-sizing:border-box;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 200px;
+        height: 100%;
+        background-color:linen;
+    }
+
+    nav {
+        height: 100%;
+    }
+
+    nav a {
+        color: whitesmoke;
+        text-decoration: none;
+    }
+
+    nav li:hover{
+        background-color: #2b2bb2;
+    }
+
+    nav ul {
+        padding: 0;
+        list-style: none;
+    }
+
+    nav li {
+        background-color: #2b2b2b ;
+        padding: 10px;
+        margin: 10px;
+        transition: all 0.3s ease;
+    }
+
+    aside img {
+        display: block;
+        margin: auto;
+    }
+
+    .logo img {
+        width: 100%;
+    }
+
+    .user-cnt img {
+        width: 60%;
+    }
+
+    .user-cnt {
+        align-self: center;
+        text-align: center;
+    }
+
+    .avatar{
+        display: flex;
+        width: 80px;
+        height: 80px;
+        border-radius: 100px;
+        border: 6px solid white;
+        align-items: center;
+        margin: 10px 0;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        background: rgb(32,178,170);
+        background: linear-gradient(140deg, rgba(32,178,170,1) 0%, rgba(21,114,146,1) 100%);
+    }
+
+
+
     
+
+
+</style>
+
+<body>
+    <aside>
+        <div class="logo-cnt">
+            <div class="logo">
+                <img src="assets/logo.png" alt="logo">
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Info</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Help</a></li>
+            </ul>
+        </nav>
+        <div class="user-cnt">
+            <div class="avatar">
+                <img src="assets/user.png" alt="avatar">
+            </div>
+            <span>User</span>
+        </div>
+    </aside>
 </body>
 
 </html>
