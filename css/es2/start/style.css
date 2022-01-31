@@ -21,3 +21,13 @@ body {
 	border-radius: 3px;
 	transition: 0.3s;
 } 
+
+
+#expand-toggle:checked ~ table tbody tr.expandable{
+	visibility: visible;
+}
+
+#expand-toggle:checked ~ label[for="expand-toggle"]:before{
+	background-color: #88ff88;
+	content: "Nascondi righe";
+}
