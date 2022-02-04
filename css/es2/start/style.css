@@ -1,0 +1,33 @@
+body {
+	font-family: monospace;
+}
+
+#expand-toggle {
+	display: none;
+}
+
+.expandable {
+	visibility: collapse;
+	background: gray;
+	color: white;
+}
+
+#expand-btn {
+	display: inline-block;
+	margin-top: 12px;
+	padding: 6px 12px;
+	background-color: #ff8888;
+	border: 1px solid;
+	border-radius: 3px;
+	transition: 0.3s;
+} 
+
+
+#expand-toggle:checked ~ table tbody tr.expandable{
+	visibility: visible;
+}
+
+#expand-toggle:checked ~ label[for="expand-toggle"]:before{
+	background-color: #88ff88;
+	content: "Nascondi righe";
+}

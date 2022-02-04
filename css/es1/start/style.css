@@ -1,0 +1,14 @@
+:root {
+    --hw: 100px;
+}
+
+body {
+    background-color: #011212;
+}
+
+.ball {
+    width: var(--hw);
+    height: var(--hw);
+    background-color: #ff8800;
+    border-radius: 50px;
+}

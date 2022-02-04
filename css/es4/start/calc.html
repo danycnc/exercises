@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+    }
+
+    div {
+        text-align: center;
+    }
+
+    .main-cnt {
+        margin: 10px;
+        max-width: 300px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas: 'display display display display'
+        'addition subtraction multiplication division'
+        '7 8 9 res'
+        '4 5 6 res'
+        '1 2 3 res'
+        '0 dot ac res';
+        gap: 2px;
+        background-color: #7890A3;
+        overflow: hidden;
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+    
+    .main-cnt div {
+        padding: 12px;
+    }
+
+
+    .display-cnt {
+        height: 20px;
+        grid-area: display;
+        background-color: #384348;
+        text-align: right;
+        font-family: serif;
+        font-size: 1.4em;
+        color: white;
+        display: grid;
+        align-content: center;
+    }
+
+    .btn-res-cnt {
+        grid-area: res;
+        background-color: #FF1D6B;
+        display: grid;
+        align-content: center;
+    }
+
+    .btn-oper-cnt {
+        background-color: #CAD6DF;
+    }
+
+    .btn-cnt {
+        background-color: #ECF0F3;
+    }
+
+    #sum {
+        grid-area: addition;
+    }
+
+    #sub {
+        grid-area: subtraction;
+    }
+
+    #mult {
+        grid-area: multiplication;
+    }
+    
+    #div {
+        grid-area: division;
+    }
+
+
+</style>
+
+<body>
+    <div class="main-cnt">
+        <div class="display-cnt">
+            <span>0</span>
+        </div>
+        <div class="btn-oper-cnt" id="sum">
+            <span>+</span>
+        </div>
+        <div class="btn-oper-cnt" id="sub">
+            <span>-</span>
+        </div>
+        <div class="btn-oper-cnt" id="mult">
+            <span>×</span>
+        </div>
+        <div class="btn-oper-cnt" id="div">
+            <span>÷</span>
+        </div>
+        <div class="btn-res-cnt">
+            <spna>=</span>
+        </div>    
+         <div class="btn-cnt">
+            <span>7</span>
+        </div>
+        <div class="btn-cnt">
+            <span>8</span>
+        </div>
+        <div class="btn-cnt">
+            <span>9</span>
+        </div>
+        <div class="btn-cnt">
+            <span>4</span>
+        </div>
+        <div class="btn-cnt">
+            <span>5</span>
+        </div>
+        <div class="btn-cnt">
+            <span>6</span>
+        </div>
+       <div class="btn-cnt">
+            <span>1</span>
+        </div>
+        <div class="btn-cnt">
+            <span>2</span>
+        </div>
+        <div class="btn-cnt">
+            <span>3</span>
+        </div>    
+        <div class="btn-cnt">
+            <span>0</span>
+        </div>
+        <div class="btn-cnt">
+            <span>.</span>
+        </div>
+        <div class="btn-cnt">
+            <span>AC</span>
+        </div>
+    </div>
+</body>
+</html>
