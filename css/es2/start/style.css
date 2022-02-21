@@ -2,9 +2,9 @@ body {
 	font-family: monospace;
 }
 
-#expand-toggle {
+/*#expand-toggle {
 	display: none;
-}
+}*/
 
 .expandable {
 	visibility: collapse;
