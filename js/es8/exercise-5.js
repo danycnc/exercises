@@ -1,5 +1,13 @@
 function calculateAverageAge(persons) {
   // ...
+  let sum = 0; 
+
+  for (let p of persons) {
+    sum += p.age
+  }
+  console.log(sum)
+
+  return(sum/persons.length)
 }
 
 const persons = [
