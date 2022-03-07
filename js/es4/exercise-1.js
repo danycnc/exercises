@@ -11,16 +11,16 @@ const otherSalary = calculateSalary('other');
 
 function calculateSalary(role) {
   // ...
-  if (role==='ceo') {
+  if (role === 'ceo') {
     return '2200€';
   }
-  else if (role==='manager') {
+  else if (role === 'manager') {
    return '1800€'
   }
-  else if (role==='cto') {
+  else if (role === 'cto') {
     return '1800€'
   }
-  else if (role==='developer') {
+  else if (role === 'developer') {
     return '1500€'
   }
   else {
