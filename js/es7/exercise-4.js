@@ -2,9 +2,11 @@ function nicknameMap(persons) {
   // ...
   let arrTemp = [];
 
-  for (x in persons) {
-    arrTemp[x]=persons[x].name+"-"+persons[x].age;
+  for (let p of persons) {
+    arrTemp.push(p.name+'-'+p.age)
   }
+
+
 
   return arrTemp
 }
