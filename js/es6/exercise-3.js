@@ -1,5 +1,16 @@
 function adultFilter(persons) {
   // ...
+  let arrTemp = [];
+  for (x in persons) {
+
+    if (persons[x].age >= 18) {
+      arrTemp.push(persons[x]);
+    }
+    else {
+      continue;
+    }
+  }
+  return arrTemp;
 }
 
 const persons = [
