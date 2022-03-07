@@ -1,5 +1,5 @@
 function canPlay() {
-  let personName = 'Paul';
+  const personName = 'Paul';
 
   if (true) {
     personName = 'George'; // Argh! Voglio che personName sia una variabile di sola lettura
