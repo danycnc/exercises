@@ -1,16 +1,27 @@
 function uncompletedNotes(notes) {
   // ...
 
-  let uncomplete = [];
+  let inProgress = [];
+  let currentNote = -1;
 
-  for (let currentNote in notes) {
-    for (let currentTodo in notes[currentNote].todos) {
-      if (notes[currentNote].todos[currentTodo].done == false) {
-        uncomplete.push(notes[currentNote]);
+  // for (let currentNote in notes) {
+  //   for (let currentTodo in notes[currentNote].todos) {
+  //     if (notes[currentNote].todos[currentTodo].done == false) {
+  //       uncomplete.push(notes[currentNote]);
+  //     }
+  //   }
+  // }
+  // return uncomplete;
+
+  for (let { todos } of notes) {
+    currentNote++;
+    for (let { done } of todos) {
+      if (done == false) {
+        inProgress.push(notes[currentNote]);
       }
     }
   }
-  return uncomplete;
+  return inProgress;
 }
 
 const notes = [
