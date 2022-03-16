@@ -1,78 +1,91 @@
 function firstUncompletedNote(notes) {
   // ...
+
+  let firstInProgress = [];
+  let currentNote = -1;
+
+  for (let { todos } of notes) {
+    currentNote++;
+    for (let { done } of todos) {
+      if (done == false) {
+        firstInProgress.push(notes[currentNote]);
+        return firstInProgress;
+      }
+    }
+  }
 }
 
 const notes = [
   {
     id: 1,
-    description: 'Workout program',
+    description: "Workout program",
     todos: [
       {
         id: 1,
-        name: 'Push ups - 10 x 3',
-        done: true
+        name: "Push ups - 10 x 3",
+        done: true,
       },
       {
         id: 2,
-        name: 'Abdominals - 20 x 3',
-        done: true
+        name: "Abdominals - 20 x 3",
+        done: true,
       },
       {
         id: 3,
-        name: 'Tapis Roulant - 15min',
-        done: true
-      }
-    ]
+        name: "Tapis Roulant - 15min",
+        done: true,
+      },
+    ],
   },
   {
     id: 2,
-    description: 'Front-end Roadmap',
+    description: "Front-end Roadmap",
     todos: [
       {
         id: 1,
-        name: 'Learn HTML',
-        done: true
+        name: "Learn HTML",
+        done: true,
       },
       {
         id: 2,
-        name: 'Learn CSS',
-        done: false
+        name: "Learn CSS",
+        done: false,
       },
       {
         id: 3,
-        name: 'Learn JavaScript',
-        done: true
+        name: "Learn JavaScript",
+        done: true,
       },
       {
         id: 4,
-        name: 'Learn Angular',
-        done: false
-      }
-    ]
+        name: "Learn Angular",
+        done: false,
+      },
+    ],
   },
   {
     id: 3,
-    description: 'My Movies Library',
+    description: "My Movies Library",
     todos: [
       {
         id: 1,
-        name: 'La città incantata',
-        done: true
+        name: "La città incantata",
+        done: true,
       },
       {
         id: 2,
-        name: 'Avatar',
-        done: true
+        name: "Avatar",
+        done: true,
       },
       {
         id: 3,
-        name: 'Titanic',
-        done: false
-      }
-    ]
-  }
-]
+        name: "Titanic",
+        done: false,
+      },
+    ],
+  },
+];
 
 const noteInProgress = firstUncompletedNote(notes);
-console.log('All notes: ', notes);
-console.log('First note in progress: ', noteInProgress);
+console.log("All notes: ", notes);
+console.log("First note in progress: ", noteInProgress);
