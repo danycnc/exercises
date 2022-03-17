@@ -1,26 +1,10 @@
 function uncompletedNotes(notes) {
   // ...
-
   let inProgress = [];
-  let currentNote = -1;
 
-  // for (let currentNote in notes) {
-  //   for (let currentTodo in notes[currentNote].todos) {
-  //     if (notes[currentNote].todos[currentTodo].done == false) {
-  //       uncomplete.push(notes[currentNote]);
-  //     }
-  //   }
-  // }
-  // return uncomplete;
+  let incomplete = notes.find(() => !notes.todos?.done);
+  inProgress.push(incomplete);
 
-  for (let { todos } of notes) {
-    currentNote++;
-    for (let { done } of todos) {
-      if (done == false) {
-        inProgress.push(notes[currentNote]);
-      }
-    }
-  }
   return inProgress;
 }
 
