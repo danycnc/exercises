@@ -3,9 +3,8 @@ function calculateAverageAge(persons) {
 
   let numberOfPeople = persons.length;
 
-  let sum = persons.reduce(function (total, currentValue) {
-    return total + currentValue.age;
-  }, 0);
+  let sum = persons.reduce((total, currentValue) => total+currentValue.age,0)
+
 
   return sum / numberOfPeople;
 }
