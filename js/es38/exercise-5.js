@@ -17,10 +17,6 @@ class BankAccount {
     console.log(this.#amount);
   }
 
-
-
-//parte aggiunta**************
-
   getAmount() {
     return this.#amount
   }
@@ -28,7 +24,6 @@ class BankAccount {
   setAmount(amount) {
     this.#amount += amount
   }
-  //***************************
 }
 
 class BankAccountVip extends BankAccount {
@@ -37,15 +32,10 @@ class BankAccountVip extends BankAccount {
     super(initialAmount)
   }
 
-  deposit(newamount){
-
-    if (this.getAmount()>=1000) {
-      newamount+= newamount/100*3;
-      this.setAmount(newamount)
-    }
-
-    else {
-      this.setAmount(newamount)
+  deposit(newAmount){
+    if (this.getAmount()>100) {
+      newAmount+= newAmount/100*3;
+      this.setAmount(newAmount)
     }
   }
 
