@@ -1,18 +1,23 @@
 function firstUncompletedNote(notes) {
   // ...
 
-  let firstInProgress = [];
-  let currentNote = -1;
+  // let firstInProgress = [];
+  // let currentNote = -1;
 
-  for (let { todos } of notes) {
-    currentNote++;
-    for (let { done } of todos) {
-      if (done == false) {
-        firstInProgress.push(notes[currentNote]);
-        return firstInProgress;
-      }
-    }
-  }
+  // for (let { todos } of notes) {
+  //   currentNote++;
+  //   for (let { done } of todos) {
+  //     if (done == false) {
+  //       firstInProgress.push(notes[currentNote]);
+  //       return firstInProgress;
+  //     }
+  //   }
+  // }
+
+  let noteInProgress = notes.find((note) => note.todos.find((todo) => todo.done === false))
+
+  return noteInProgress
+
 }
 
 const notes = [
