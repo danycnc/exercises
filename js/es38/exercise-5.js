@@ -18,27 +18,28 @@ class BankAccount {
   }
 
   getAmount() {
-    return this.#amount
+    return this.#amount;
   }
 
   setAmount(amount) {
-    this.#amount += amount
+    this.#amount += amount;
   }
 }
 
 class BankAccountVip extends BankAccount {
-
   constructor(initialAmount) {
-    super(initialAmount)
+    super(initialAmount);
   }
 
-  deposit(newAmount){
-    if (this.getAmount()>100) {
-      newAmount+= newAmount/100*3;
-      this.setAmount(newAmount)
+  deposit(newAmount) {
+    if (newAmount >= 1000) {
+      let interest = (newAmount / 100) * 3;
+      newAmount += interest;
+      this.setAmount(newAmount);
+    } else {
+      this.setAmount(newAmount);
     }
   }
-
 }
 
 const bankAccountVip = new BankAccountVip(1000);
