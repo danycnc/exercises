@@ -9,12 +9,12 @@ class BankAccount {
     // throw an exception if amount is negative
     try {
       if (amount < 0) {
-        throw negativeNumberError;
+        throw new Error("No negative value ammitted");
       } else {
         this.#amount += amount;
       }
-    } catch (negativeNumberError) {
-      return console.log("No negative value ammitted");
+    } catch (err) {
+      console.log(err.message);
     }
   }
 
@@ -22,18 +22,14 @@ class BankAccount {
     // throw an exception if amount is negative or if withdrawal amount is greater than current amount
     try {
       if (amount < 0) {
-        throw SyntaxError;
+        throw new Error("No negative value ammitted");
       } else if (amount > this.#amount) {
-        throw RangeError;
+        throw new Error("No enough funds, impossible to withdraw");
       } else {
         this.#amount -= amount;
       }
     } catch (err) {
-      if (err instanceof SyntaxError) {
-        return console.log("No negative value ammitted");
-      } else {
-        return console.log("No enough funds, impossible to withdraw");
-      }
+      console.log(err.message);
     }
   }
 
