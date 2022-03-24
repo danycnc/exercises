@@ -19,30 +19,42 @@ const persons = [
   },
 ];
 
-function fetchPersonById(id) {
-  return new Promise((resolve, reject) => {
+// function fetchPersonById(id) {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       const person = persons.find((item) => item.id === id);
+
+//       if (person) {
+//         return resolve(JSON.stringify(person));
+//       }
+
+//       return reject(`Person with id: ${id} doesn't exist`);
+//     }, 1000);
+//   });
+// }
+
+async function fetchPersonById(id) {
+  let promise = new Promise((resolve, reject) => {
     setTimeout(() => {
       const person = persons.find((item) => item.id === id);
 
       if (person) {
-        return resolve(JSON.stringify(person));
+        resolve(JSON.stringify(person));
       }
 
-      return reject(`Person with id: ${id} doesn't exist`);
+      reject(`Person with id: ${id} doesn't exist`);
     }, 1000);
   });
-}
 
-async function asyncFetch(id) {
   try {
-    let personJson = await fetchPersonById(id);
+    let personJson = await promise;
     console.log(JSON.parse(personJson));
   } catch (err) {
     console.log(err);
   }
 }
 
-asyncFetch(2);
+fetchPersonById(2);
 // fetchPersonById(2)
 // .then((personJson) => JSON.parse(personJson))
 // .then((person) => console.log(person))
