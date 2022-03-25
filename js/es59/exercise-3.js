@@ -30,11 +30,11 @@ function fetchPersonById(id) {
 
       return reject(`Person with id: ${id} doesn't exist`);
     }, 1000);
-  });
+  })
+    .then((stringedPerson) => console.log(JSON.parse(stringedPerson)))
+    .catch((err) => console.log(err));
 }
 
 // core here
 
 let person = fetchPersonById(3);
-
-person.then((stringedPerson) => console.log(stringedPerson));
