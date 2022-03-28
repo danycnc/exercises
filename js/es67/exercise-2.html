@@ -1,0 +1,35 @@
+<html>
+  <body>
+    <div id="container" style="display: flex; align-items: center;"></div>
+  </body>
+</html>
+
+<script>
+let todoContent;
+
+function todoBuilder() {
+  let divEl = document.getElementById("container");
+  let headEl = document.createElement("h2");
+  let chekEl = document.createElement("input");
+
+  headEl.innerText = todoContent.title;
+  chekEl.setAttribute("type", "checkbox");
+  chekEl.checked = todoContent.completed;
+
+  divEl.appendChild(headEl);
+  divEl.appendChild(chekEl);
+}
+
+async function getRequest() {
+  fetch("https://jsonplaceholder.typicode.com/todos/4")
+    .then((response) => response.json())
+    .then((data) => {
+      todoContent = data;
+      todoBuilder();
+    })
+    .catch((err) => console.log("File not found"));
+}
+
+window.addEventListener("load", getRequest);
+
+</script>
