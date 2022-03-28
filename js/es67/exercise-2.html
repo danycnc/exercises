@@ -7,7 +7,15 @@
 <script>
 let todoContent;
 
-function todoBuilder() {
+async function todoBuilder() {
+
+  todoContent = await fetch("https://jsonplaceholder.typicode.com/todos/4")
+  .then((response) => response.json())
+    .then((data) => 
+      todoContent = data
+ 
+    )
+
   let divEl = document.getElementById("container");
   let headEl = document.createElement("h2");
   let chekEl = document.createElement("input");
@@ -20,16 +28,6 @@ function todoBuilder() {
   divEl.appendChild(chekEl);
 }
 
-async function getRequest() {
-  fetch("https://jsonplaceholder.typicode.com/todos/4")
-    .then((response) => response.json())
-    .then((data) => {
-      todoContent = data;
-      todoBuilder();
-    })
-    .catch((err) => console.log("File not found"));
-}
-
-window.addEventListener("load", getRequest);
+window.addEventListener("load", todoBuilder());
 
 </script>
