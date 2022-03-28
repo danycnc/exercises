@@ -8,13 +8,9 @@
 let todoContent;
 
 async function todoBuilder() {
-
   todoContent = await fetch("https://jsonplaceholder.typicode.com/todos/4")
-  .then((response) => response.json())
-    .then((data) => 
-      todoContent = data
- 
-    )
+    .then((response) => response.json())
+    .then((data) => (todoContent = data));
 
   let divEl = document.getElementById("container");
   let headEl = document.createElement("h2");
