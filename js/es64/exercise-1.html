@@ -1,0 +1,45 @@
+<html>
+  <body>
+    <div id="container">
+      <button type="button" id="fetch-post">Fetch Post</button>
+      <button type="button" id="save-post">Save Post on LocalStorage</button>
+    </div>
+  </body>
+</html>
+  <script>
+
+    let response
+    let postContent
+
+    fetchBtn = document.getElementById("fetch-post")
+    saveBtn = document.getElementById("save-post")
+
+    async function getRequest(){
+    fetch("https://jsonplaceholder.typicode.com/posts/1")
+    .then(response => response.json())
+    .then(data => postContent = data)
+    .catch(err => console.log('File not found'))
+    }
+
+  function saveInLocal(){
+    try {
+      if (postContent){
+        for(key in postContent){
+          localStorage.setItem(key, postContent[key])
+        }
+      }
+      else {
+        throw new Error("No post to save yet!")
+      }
+    }
+    catch (err) {
+      console.log(err)
+    }
+  }
+
+  fetchBtn.addEventListener("click", getRequest)
+  saveBtn.addEventListener("click", saveInLocal)
+
+
+  </script>
+
