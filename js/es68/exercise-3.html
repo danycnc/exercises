@@ -21,27 +21,27 @@
   let form = document.querySelector("form");
   const submitBtn = document.getElementById("submit-todo");
 
-  function submit() {
+  function submitForm() {
+    event.preventDefault();
     let post = {
-      todoTitle: form[0].value,
-      todoCheck: form[1].checked,
+      title: document.getElementById("todo-title").value,
+      completed: document.getElementById("todo-completed").checked,
     };
+
+    console.log(post);
 
     fetch("https://jsonplaceholder.typicode.com/posts", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
       body: JSON.stringify(post),
-    })
-      .then((response) => response.json())
-      .then((post) => {
-        console.log("Success:", post);
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-      });
+    });
+    // .then((response) => response.json())
+    // .then((post) => {
+    //   console.log("Success:", post);
+    // })
+    // .catch((error) => {
+    //   console.error("Error:", error);
+    // });
   }
 
-  submitBtn.addEventListener("click", submit);
+  form.addEventListener("submit", submitForm);
 </script>
