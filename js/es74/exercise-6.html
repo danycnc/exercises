@@ -1,0 +1,44 @@
+<html>
+  <body>
+    <div id="container">
+      <h2>Person's Form</h2>
+      <form id="person-form">
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>
+
+<script>
+  const form = document.getElementById("person-form");
+  const submitBtn = form.firstElementChild;
+
+  function initForm() {
+    const formFields = ["firstName", "lastName", "age"];
+
+    formFields.forEach((element) => {
+      elementName = element;
+      let field = document.createElement("input");
+      field.type = "text";
+      field.placeholder = elementName;
+      field.id = elementName;
+      form.insertBefore(field, submitBtn);
+    });
+  }
+
+  function submitPersonForm(event) {
+    let person = {
+      firstName: document.getElementById("firstName").value,
+      lastName: document.getElementById("lastName").value,
+      age: document.getElementById("age").value,
+    };
+
+    event.preventDefault();
+
+    console.log(person);
+  }
+
+  window.onload = initForm;
+
+  form.addEventListener("submit", submitPersonForm);
+</script>
